@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "upstream"]
+	url = https://github.com/gurwinder-git/Mean-Stack-Lab.git
+	fetch = +refs/heads/*:refs/remotes/upstream/*
+[http]
+	postBuffer = 524288000
+[remote "origin"]
+	url = https://github.com/gurwinder-git/Mean-Stack-Lab.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
