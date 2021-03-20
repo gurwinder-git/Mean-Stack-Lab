@@ -14,13 +14,14 @@
 //   console.log(`Example app listening at http://localhost:${port}`)
 // })
 
-
-
 const express = require('express');
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const app = express();
 const port = 8000;
+
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 //serving a static file
 app.use('/static',express.static('static'));
 // app.use(express.urlencoded())
@@ -30,17 +31,10 @@ app.set('views',path.join(__dirname,'views'));
 
 //Endpoints
 app.get("/",(req,res)=>{
-    
-    res.render('views/index.html');
+    res.render('index');
 });
-
-// app.post("/",(req,res)=>{
-//     res.render('index.pug');
-// })
-
 
 //start the server
 app.listen(port,()=>{
     console.log(`the application started successfully at http://localhost:${port}`)
 } );
-
